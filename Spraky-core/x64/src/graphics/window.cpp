@@ -1,6 +1,9 @@
-#include "window.h"
 #include <iostream>
+#include <GL/glew.h>
 #include <GLFW/glfw3.h>
+#include "window.h"
+
+
 
 namespace sparky {
 	namespace graphics {
@@ -37,6 +40,11 @@ namespace sparky {
 			}
 			glfwMakeContextCurrent(m_Window);
 			glfwSetWindowSizeCallback(m_Window, windowResize);
+			if (glewInit() != GLEW_OK) {
+				std::cout << "Could not initialize GLEW!" << std::endl;
+			}
+
+			std::cout << "OpenGL " << glGetString(GL_VERSION) << std::endl;
 			return true;
 		}
 
