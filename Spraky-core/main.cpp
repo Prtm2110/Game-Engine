@@ -1,27 +1,40 @@
 #include <iostream>
 #include <GL/glew.h>
-#include  "x64/src/graphics/window.h"
+#include "x64/src/graphics/window.h"
 
 int main() {
-	using namespace sparky;
-	using namespace graphics;
-	Window window("sparky!!", 800, 600);
-	glClearColor(0.2f, 0.3f, 0.8f, 0.9f);
+    using namespace sparky;
+    using namespace graphics;
 
-	GLuint vao;
-	glGenVertexArrays(1, &vao); 
-	glBindVertexArray(vao);
+    // Create a window
+    Window window("Sparky!!", 800, 600);
+    glClearColor(0.2f, 0.3f, 0.8f, 0.9f);
 
-	while (!window.closed())
-	{
-		window.clear();
-		glBegin(GL_TRIANGLES);
-		glVertex2f(-0.5f,-0.5f);
-		glVertex2f(0.5f,0.5f);
-		glVertex2f(0.5f,-0.5f);
-		glEnd();
-		glDrawArrays(GL_ARRAY_BUFFER, 0, 6);
-		window.update();
-	}
-	return 0;
+    // Initialize OpenGL VAO
+    GLuint vao;
+    glGenVertexArrays(1, &vao);
+    glBindVertexArray(vao);
+
+    while (!window.closed()) {
+        window.clear();
+
+        // Check if 'A' key is pressed
+        if (window.isKeyPressed(GLFW_KEY_A)) {
+            std::cout << "A is pressed!" << std::endl;
+        }
+        double x, y;
+		window.getMousePosition(x, y);  
+		std::cout << x << ", " << y << std::endl;
+
+        // Draw a simple triangle
+        glBegin(GL_TRIANGLES);
+        glVertex2f(-0.5f, -0.5f);
+        glVertex2f(0.5f, 0.5f);
+        glVertex2f(0.5f, -0.5f);
+        glEnd();
+
+        // Update the window
+        window.update();
+    }
+    return 0;
 }
