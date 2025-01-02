@@ -136,9 +136,11 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="x64\src\graphics\window.cpp" />
+    <ClCompile Include="x64\src\maths\vec2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="x64\src\graphics\window.h" />
+    <ClInclude Include="x64\src\maths\vec2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

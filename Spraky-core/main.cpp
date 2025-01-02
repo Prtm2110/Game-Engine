@@ -1,10 +1,12 @@
 #include <iostream>
 #include <GL/glew.h>
 #include "x64/src/graphics/window.h"
+#include "x64/src/maths/vec2.h"
 
 int main() {
     using namespace sparky;
     using namespace graphics;
+    using namespace maths;
 
     // Create a window
     Window window("Sparky!!", 800, 600);
@@ -14,6 +16,9 @@ int main() {
     GLuint vao;
     glGenVertexArrays(1, &vao);
     glBindVertexArray(vao);
+       
+	vec2 vector(2.0f, 3.0f);
+	std::cout << vector.add(vec2(3,4)) << std::endl;
 
     while (!window.closed()) {
         window.clear();

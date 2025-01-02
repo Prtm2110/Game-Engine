@@ -21,9 +21,15 @@
     <ClCompile Include="x64\src\graphics\window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="x64\src\maths\vec2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="x64\src\graphics\window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="x64\src\maths\vec2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
