@@ -8,7 +8,7 @@ namespace sparky {
 			float x, y,z,w;
 
 			vec4 ();
-			vec4 (const float& x, const float& y);
+			vec4 (const float& x, const float& y, const float& z, const float& w);
 
 			vec4 & add(const vec4 & other);
 			vec4 & subtract(const vec4 & other);
