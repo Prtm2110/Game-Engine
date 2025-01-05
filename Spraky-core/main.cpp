@@ -18,18 +18,20 @@ int main() {
     glBindVertexArray(vao);
        
 	vec2 vector(2.0f, 3.0f);
-	std::cout << vector.add(vec2(3,4)) << std::endl;
+	vec2 vec2(3.0f, 4.0f);
+	std::cout << vector + vec2 << std::endl;
+
 
     while (!window.closed()) {
         window.clear();
 
         // Check if 'A' key is pressed
-        if (window.isKeyPressed(GLFW_KEY_A)) {
+        /*if (window.isKeyPressed(GLFW_KEY_A)) {
             std::cout << "A is pressed!" << std::endl;
         }
         double x, y;
 		window.getMousePosition(x, y);  
-		std::cout << x << ", " << y << std::endl;
+		std::cout << x << ", " << y << std::endl;*/
 
         // Draw a simple triangle
         glBegin(GL_TRIANGLES);
