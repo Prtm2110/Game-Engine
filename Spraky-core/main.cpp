@@ -1,7 +1,7 @@
 #include <iostream>
 #include <GL/glew.h>
 #include "x64/src/graphics/window.h"
-#include "x64/src/maths/vec2.h"
+#include "x64/src/maths/math.h"
 
 int main() {
     using namespace sparky;
@@ -9,7 +9,7 @@ int main() {
     using namespace maths;
 
     // Create a window
-    Window window("Sparky!!", 800, 600);
+    Window window("Sparky!!", 1280, 800);
     glClearColor(0.2f, 0.3f, 0.8f, 0.9f);
 
     // Initialize OpenGL VAO
@@ -17,9 +17,9 @@ int main() {
     glGenVertexArrays(1, &vao);
     glBindVertexArray(vao);
        
-	vec2 vector(2.0f, 3.0f);
+	vec3 vector(2.0f, 3.0f, 5.0f);
 	vec2 vec23(2.0f, 3.0f);
-    std::cout << (vector == vec23) << std::endl;
+    std::cout << vector << std::endl;
 
 
     while (!window.closed()) {

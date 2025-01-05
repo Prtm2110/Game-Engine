@@ -142,6 +142,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="x64\src\graphics\window.h" />
+    <ClInclude Include="x64\src\maths\math.h" />
     <ClInclude Include="x64\src\maths\vec2.h" />
     <ClInclude Include="x64\src\maths\vec3.h" />
     <ClInclude Include="x64\src\maths\vec4.h" />
