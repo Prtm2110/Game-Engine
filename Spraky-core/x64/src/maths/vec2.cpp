@@ -57,6 +57,21 @@ namespace sparky {
 
 
 
+		bool vec2::operator==(const vec2& other)
+		{
+			if (x == other.x && y == other.y) {
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+
+		bool vec2::operator!=(const vec2& other)
+		{
+			return !(x == other.x && y == other.y);
+		}
+
 		vec2 vec2::operator+=(const vec2& other) {
 			return add(other); // *this = *this + other 
 		}
