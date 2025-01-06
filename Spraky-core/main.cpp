@@ -23,6 +23,10 @@ int main() {
 
 	mat4 position = mat4::tranlation(vec3(2, 3, 4));
 	position *= mat4::identity();
+    position.elements[12] = 3.2;
+	vec4 cl = position.columns[3];  
+	
+	std::cout << cl << std::endl;
 
 	//std::cout << position << std::endl;
 
@@ -30,7 +34,7 @@ int main() {
         window.clear();
 
         // Check if 'A' key is pressed
-        /*if (window.isKeyPressed(GLFW_KEY_A)) {
+       /* if (window.isKeyPressed(GLFW_KEY_A)) {
             std::cout << "A is pressed!" << std::endl;
         }
         double x, y;
