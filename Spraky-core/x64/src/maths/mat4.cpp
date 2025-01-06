@@ -87,7 +87,7 @@ namespace sparky{
 			results.elements[3 + 2 * 4] = -1.0f;
 			results.elements[2 + 3 * 4] = c;
 
-			return c;
+			return results;
 
 		}
 
