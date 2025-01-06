@@ -4,7 +4,7 @@
 
 namespace sparky {
 	namespace maths {
-		struct vec3  {
+		struct vec3 {
 			float x, y,z;
 
 			vec3 ();
@@ -16,7 +16,7 @@ namespace sparky {
 			vec3 & divide(const vec3 & other);
 
 			friend vec3  operator+(vec3  left, const vec3 & right);
-			friend vec3  operator-(vec3  left, const vec3 & right);
+			friend vec3  operator-(vec3  left, const vec3 & right);	
 			friend vec3  operator*(vec3  left, const vec3 & right);
 			friend vec3  operator/(vec3  left, const vec3 & right);
 

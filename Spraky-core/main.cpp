@@ -21,6 +21,10 @@ int main() {
 	vec2 vec23(2.0f, 3.0f);
     std::cout << vector << std::endl;
 
+	mat4 position = mat4::tranlation(vec3(2, 3, 4));
+	position *= mat4::identity();
+
+	//std::cout << position << std::endl;
 
     while (!window.closed()) {
         window.clear();
