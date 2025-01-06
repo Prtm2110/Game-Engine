@@ -1,6 +1,7 @@
 
 #include "mat4.h"
 #include <math.h>
+#include "maths_func.h"
 
 using namespace std;
 using namespace sparky;
