@@ -135,6 +135,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="x64\src\graphics\buffers\buffer.cpp" />
     <ClCompile Include="x64\src\graphics\shader.cpp" />
     <ClCompile Include="x64\src\graphics\window.cpp" />
     <ClCompile Include="x64\src\maths\mat4.cpp" />
@@ -144,6 +145,7 @@
     <ClCompile Include="x64\src\utils\fileutils.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="x64\src\graphics\buffers\buffer.h" />
     <ClInclude Include="x64\src\graphics\shader.h" />
     <ClInclude Include="x64\src\graphics\window.h" />
     <ClInclude Include="x64\src\maths\mat4.h" />
