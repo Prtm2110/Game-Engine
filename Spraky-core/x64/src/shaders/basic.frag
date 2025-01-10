@@ -4,8 +4,15 @@ in vec4 position; // Remove location qualifier
 
 out vec4 color;
 
+uniform vec4  colour;
+uniform vec2 ligh_Pos;
+
+in vec4 pos;
+
 void main()
 {
-    color = vec4(1.0, 0.0, 0.0, 1.0); // Set the fragment color to red
+    float intensity = 1.0 / length(pos.xy - pos.xy);
+    color = colour * intensity;
+
 }
 
