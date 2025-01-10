@@ -135,13 +135,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="x64\src\graphics\shader.cpp" />
     <ClCompile Include="x64\src\graphics\window.cpp" />
     <ClCompile Include="x64\src\maths\mat4.cpp" />
     <ClCompile Include="x64\src\maths\vec2.cpp" />
     <ClCompile Include="x64\src\maths\vec3.cpp" />
     <ClCompile Include="x64\src\maths\vec4.cpp" />
+    <ClCompile Include="x64\src\utils\fileutils.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="x64\src\graphics\shader.h" />
     <ClInclude Include="x64\src\graphics\window.h" />
     <ClInclude Include="x64\src\maths\mat4.h" />
     <ClInclude Include="x64\src\maths\math.h" />
@@ -149,6 +152,11 @@
     <ClInclude Include="x64\src\maths\vec2.h" />
     <ClInclude Include="x64\src\maths\vec3.h" />
     <ClInclude Include="x64\src\maths\vec4.h" />
+    <ClInclude Include="x64\src\utils\fileutils.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="x64\src\shaders\basic.frag" />
+    <None Include="x64\src\shaders\basic.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

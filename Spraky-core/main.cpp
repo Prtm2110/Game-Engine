@@ -2,11 +2,15 @@
 #include <GL/glew.h>
 #include "x64/src/graphics/window.h"
 #include "x64/src/maths/math.h"
+#include "x64/src/utils/fileutils.h"
+#include "x64/src/graphics/shader.h"    
+
 
 int main() {
     using namespace sparky;
     using namespace graphics;
     using namespace maths;
+    using namespace utils;
 
     // Create a window
     Window window("Sparky!!", 1280, 800);
@@ -16,39 +20,13 @@ int main() {
     GLuint vao;
     glGenVertexArrays(1, &vao);
     glBindVertexArray(vao);
-       
-	vec3 vector(2.0f, 3.0f, 5.0f);
-	vec2 vec23(2.0f, 3.0f);
-    std::cout << vector << std::endl;
-
-	mat4 position = mat4::tranlation(vec3(2, 3, 4));
-	position *= mat4::identity();
-    position.elements[12] = 3.2;
-	vec4 cl = position.columns[3];  
-	
-	std::cout << cl << std::endl;
-
+  
+	Shader shader("x64/src/shaders/basic.vert", "x64/src/shaders/basic.frag");
 	//std::cout << position << std::endl;
 
     while (!window.closed()) {
         window.clear();
-
-        // Check if 'A' key is pressed
-       /* if (window.isKeyPressed(GLFW_KEY_A)) {
-            std::cout << "A is pressed!" << std::endl;
-        }
-        double x, y;
-		window.getMousePosition(x, y);  
-		std::cout << x << ", " << y << std::endl;*/
-
-        // Draw a simple triangle
-        glBegin(GL_TRIANGLES);
-        glVertex2f(-0.5f, -0.5f);
-        glVertex2f(0.5f, 0.5f);
-        glVertex2f(0.5f, -0.5f);
-        glEnd();
-
-        // Update the window
+        
         window.update();
     }
     return 0;
