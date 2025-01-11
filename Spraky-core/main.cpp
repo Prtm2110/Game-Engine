@@ -5,6 +5,8 @@
 #include "x64/src/utils/fileutils.h"
 #include "x64/src/graphics/shader.h"    
 #include "x64/src/graphics/buffers/buffer.h"
+#include "x64/src/graphics/buffers/vertexarray.h"
+#include "x64/src/graphics/buffers/indexbuffer.h"
 
 int main() {
     using namespace sparky;
@@ -13,48 +15,77 @@ int main() {
     using namespace utils;
 
     // Create a window
+    std::cout << "Creating window..." << std::endl;
     Window window("Sparky!!", 1280, 800);
+    if (glewInit() != GLEW_OK) {
+        std::cerr << "Failed to initialize GLEW" << std::endl;
+        return -1;
+    }
     glClearColor(0.2f, 1.3f, 0.8f, 0.9f);
 
     // Initialize OpenGL VAO
-   
-	GLfloat vertices[] = {
-		-0.5f, -0.5f, 0.0f,
-        0.5f, -0.5f, 0.0f,
-        0.5f,  0.5f, 0.0f,
-		-0.5f,  0.5f, 0.0f
-	};
+    std::cout << "Initializing VAO..." << std::endl;
+    GLfloat vertices[] = {
+        -0.5f, -0.5f, 0.0f,
+         0.5f, -0.5f, 0.0f,
+         0.5f,  0.5f, 0.0f,
+        -0.5f,  0.5f, 0.0f
+    };
 
-	GLuint indices[] = {
-		0, 1, 2,
-		2, 3, 0
-	};
+    GLushort indices[] = {
+        0, 1, 2,
+        2, 3, 0
+    };
 
-    GLuint vbo, ibo;
-	glGenBuffers(1, &vbo);  
-	glBindBuffer(GL_ARRAY_BUFFER, vbo);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
-	glEnableVertexAttribArray(0);
+    VertexArray vao;
+    Buffer* vbo = new Buffer(vertices, 4 * 3, 3);
+    IndexBuffer ibo(indices, 6);
 
-	glGenBuffers(1, &ibo);
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+    std::cout << "Adding buffer to VAO..." << std::endl;
+    vao.addBuffer(vbo, 0);
 
-	mat4 ortho = mat4::orthographic(0.0f, 16.0f, 0.0f, 9.0f, -1.0f, 1.0f);
+    mat4 ortho = mat4::orthographic(0.0f, 16.0f, 0.0f, 9.0f, -1.0f, 1.0f);
 
+    std::cout << "Loading shader..." << std::endl;
     Shader shader("x64/src/shaders/basic.vert", "x64/src/shaders/basic.frag");
     shader.enable();
     shader.setUniformMat4("pr_matrix", ortho);
-    shader.setUniformMat4("ml_matrix", mat4::translation(vec3(8, 4.5, 0)));
-    shader.setUniform2f("light_pos", vec2(8.0f, 4.5f)); // Center of the square
-    shader.setUniform4f("colour",    vec4(0.0f, 0.0f, 0.0f, 1.0f )); // Black color for the glow
+    shader.setUniformMat4("ml_matrix", mat4::translation(vec3(4, 4.5, 0)));
+    shader.setUniform2f("light_pos", vec2(4.0f, 1.5f)); // Center of the square
+    shader.setUniform4f("colour", vec4(0.2f, 0.3f, 0.8f, 1.0f)); // Black color for the glow
 
+    std::cout << "Entering main loop..." << std::endl;
     while (!window.closed()) {
+        std::cout << "Clearing window..." << std::endl;
         window.clear();
 
-		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+        std::cout << "Binding VAO ..." << std::endl;
+        vao.bind();
+        std::cout << "Binding IBO..." << std::endl;
+        ibo.bind();
+
+        // Check for OpenGL errors
+        GLenum error = glGetError();
+        if (error != GL_NO_ERROR) {
+            std::cerr << "OpenGL error before drawing elements: " << error << std::endl;
+        }
+
+        std::cout << "Drawing elements..." << std::endl;
+        glDrawElements(GL_TRIANGLES, ibo.getCount(), GL_UNSIGNED_SHORT, 0); // Use GL_UNSIGNED_SHORT
+
+        // Check for OpenGL errors
+        error = glGetError();
+        if (error != GL_NO_ERROR) {
+            std::cerr << "OpenGL error after drawing elements: " << error << std::endl;
+        }
+
+        vao.unbind();
+
+        std::cout << "Updating window..." << std::endl;
         window.update();
     }
+
+    std::cout << "Cleaning up..." << std::endl;
+    delete vbo; // Clean up dynamically allocated memory
     return 0;
 }
