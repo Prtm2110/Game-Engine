@@ -4,7 +4,7 @@
 #include "x64/src/maths/math.h"
 #include "x64/src/utils/fileutils.h"
 #include "x64/src/graphics/shader.h"    
-
+#include "x64/src/graphics/buffers/buffer.h"
 
 int main() {
     using namespace sparky;
@@ -46,7 +46,7 @@ int main() {
     Shader shader("x64/src/shaders/basic.vert", "x64/src/shaders/basic.frag");
     shader.enable();
     shader.setUniformMat4("pr_matrix", ortho);
-    shader.setUniformMat4("ml_matrix", mat4::tranlation(vec3(8, 4.5, 0)));
+    shader.setUniformMat4("ml_matrix", mat4::translation(vec3(8, 4.5, 0)));
     shader.setUniform2f("light_pos", vec2(8.0f, 4.5f)); // Center of the square
     shader.setUniform4f("colour",    vec4(0.0f, 0.0f, 0.0f, 1.0f )); // Black color for the glow
 

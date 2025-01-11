@@ -92,11 +92,11 @@ namespace sparky{
 
 		}
 
-		mat4 mat4::tranlation(const  vec3& translation) {
+		mat4 mat4::translation(const vec3& translation) { // Corrected spelling
 			mat4 result(1.0f);
-			result.elements[0 + 3 * 4] = translation.x;
-			result.elements[1 + 3 * 4] = translation.y;
-			result.elements[2 + 3 * 4] = translation.z;
+			result.elements[12] = translation.x;
+			result.elements[13] = translation.y;
+			result.elements[14] = translation.z;
 			return result;
 		}
 
