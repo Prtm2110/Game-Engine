@@ -56,36 +56,22 @@ int main() {
 
     std::cout << "Entering main loop..." << std::endl;
     while (!window.closed()) {
-        std::cout << "Clearing window..." << std::endl;
-        window.clear();
-
-        std::cout << "Binding VAO ..." << std::endl;
+      
+        window.clear(); 
         vao.bind();
-        std::cout << "Binding IBO..." << std::endl;
+      
         ibo.bind();
-
-        // Check for OpenGL errors
-        GLenum error = glGetError();
-        if (error != GL_NO_ERROR) {
-            std::cerr << "OpenGL error before drawing elements: " << error << std::endl;
-        }
-
-        std::cout << "Drawing elements..." << std::endl;
+         
         glDrawElements(GL_TRIANGLES, ibo.getCount(), GL_UNSIGNED_SHORT, 0); // Use GL_UNSIGNED_SHORT
 
         // Check for OpenGL errors
-        error = glGetError();
-        if (error != GL_NO_ERROR) {
-            std::cerr << "OpenGL error after drawing elements: " << error << std::endl;
-        }
-
+     
         vao.unbind();
 
-        std::cout << "Updating window..." << std::endl;
+      
         window.update();
     }
+        delete vbo; // Clean up dynamically allocated memory
 
-    std::cout << "Cleaning up..." << std::endl;
-    delete vbo; // Clean up dynamically allocated memory
     return 0;
 }
