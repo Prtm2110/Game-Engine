@@ -26,9 +26,7 @@ int main() {
 
     mat4 ortho = mat4::orthographic(0.0f, 16.0f, 0.0f, 9.0f, -1.0f, 1.0f);
 
-   
-    
-    std::cout << "Loading shader..." << std::endl;
+ 
     Shader shader("x64/src/shaders/basic.vert", "x64/src/shaders/basic.frag");
     shader.enable();
     shader.setUniformMat4("pr_matrix", ortho);
@@ -40,9 +38,6 @@ int main() {
     shader.setUniform4f("colour", vec4(0.2f, 0.3f, 0.8f, 1.0f));
 
     
-    
-    
-    
     std::cout << "Entering main loop..." << std::endl;
     while (!window.closed()) {
       
@@ -50,13 +45,11 @@ int main() {
 
         double x, y;
 		window.getMousePosition(x, y);
-		shader.setUniform2f("light_pos", vec2(x * 16.0f / 1280.0f, 9.0f - y * 9.0f / 800.0f)); // Center of the square
+		shader.setUniform2f("light_pos", vec2(x * 16.0f / 1280.0f, 9.0f - y * 9.0f / 800.0f));
         
 		renderer.submit(&sprite);
 		renderer.flush();
-       
- 
-      
+            
         window.update();
     }
     return 0;
