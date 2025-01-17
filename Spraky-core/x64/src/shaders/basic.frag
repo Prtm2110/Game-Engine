@@ -1,18 +1,16 @@
 #version 330 core
 
-in vec4 position; // Remove location qualifier
+layout(location = 0) out vec4 color;
 
-out vec4 color;
+uniform vec4 colour;
+uniform vec2 light_pos;
 
-uniform vec4  colour;
-uniform vec2 ligh_Pos;
+in DATA {
+    vec4 position;
+    vec4 color;
+} fs_in;
 
-in vec4 pos;
-
-void main()
-{
-    float intensity = 1.0 / length(pos.xy - pos.xy);
-    color = colour * intensity;
-
+void main() {
+    float intensity = 1.0 / length(fs_in.position.xy - light_pos);
+    color = fs_in.color * intensity;
 }
-

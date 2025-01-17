@@ -13,6 +13,7 @@ namespace sparky {
 
 		public:
 			Buffer(GLfloat* data, GLsizei count, GLuint componenetCount);
+			~Buffer();
 			void bind() const;
 			void unbind() const;
 

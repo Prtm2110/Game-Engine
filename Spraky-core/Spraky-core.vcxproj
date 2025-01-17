@@ -135,11 +135,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="x64\src\graphics\BatchRenderer2D.cpp" />
     <ClCompile Include="x64\src\graphics\buffers\buffer.cpp" />
     <ClCompile Include="x64\src\graphics\buffers\indexbuffer.cpp" />
     <ClCompile Include="x64\src\graphics\buffers\vertexarray.cpp" />
     <ClCompile Include="x64\src\graphics\simple2drenderer.cpp" />
     <ClCompile Include="x64\src\graphics\shader.cpp" />
+    <ClCompile Include="x64\src\graphics\sprite.cpp" />
+    <ClCompile Include="x64\src\graphics\sprite.h" />
+    <ClCompile Include="x64\src\graphics\static_sprite.cpp" />
     <ClCompile Include="x64\src\graphics\window.cpp" />
     <ClCompile Include="x64\src\maths\mat4.cpp" />
     <ClCompile Include="x64\src\maths\vec2.cpp" />
@@ -148,6 +152,7 @@
     <ClCompile Include="x64\src\utils\fileutils.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="x64\src\graphics\BatchRenderer2D.h" />
     <ClInclude Include="x64\src\graphics\buffers\indexbuffer.h" />
     <ClInclude Include="x64\src\graphics\buffers\buffer.h" />
     <ClInclude Include="x64\src\graphics\buffers\vertexarray.h" />
@@ -155,6 +160,7 @@
     <ClInclude Include="x64\src\graphics\renderer2d.h" />
     <ClInclude Include="x64\src\graphics\shader.h" />
     <ClInclude Include="x64\src\graphics\simple2drenderer.h" />
+    <ClInclude Include="x64\src\graphics\static_sprite.h" />
     <ClInclude Include="x64\src\graphics\window.h" />
     <ClInclude Include="x64\src\maths\mat4.h" />
     <ClInclude Include="x64\src\maths\maths.h" />
