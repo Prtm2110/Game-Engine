@@ -9,7 +9,7 @@
 #include "x64/src/graphics/renderer2d.h"
 #include "x64/src/graphics/simple2drenderer.h"
 #include "x64/src/graphics/batchrenderer2d.h"
-#include "x64/src/graphics/batchrenderer2D.h"
+// #include "x64/src/graphics/batchrenderer2D.h"
 
 #include "x64/src/graphics/static_sprite.h"
 #include "x64/src/graphics/sprite.h"
