@@ -1,7 +1,7 @@
 #include "vec3.h"
 using namespace std;
 
-namespace sparky {
+namespace rabbit {
 	namespace maths {
 		vec3::vec3() {
 			x = 0.0f;

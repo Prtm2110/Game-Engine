@@ -2,7 +2,7 @@
 
 #include<GL/glew.h>
 
-namespace sparky {
+namespace rabbit {
 	namespace graphics {
 
 		class IndexBuffer {

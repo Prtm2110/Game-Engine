@@ -3,7 +3,7 @@
 #include <GLFW/glfw3.h>
 #include "window.h"
 
-namespace sparky {
+namespace rabbit {
     namespace graphics {
 
         void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);

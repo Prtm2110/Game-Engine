@@ -1,6 +1,6 @@
 #include "vertexarray.h"
 
-namespace sparky {
+namespace rabbit {
 	namespace graphics {
 		VertexArray::VertexArray()
 		{

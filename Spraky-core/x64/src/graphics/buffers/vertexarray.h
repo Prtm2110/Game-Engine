@@ -3,7 +3,7 @@
 #include <vector>
 #include "buffer.h"
 
- namespace sparky{
+ namespace rabbit{
 	 namespace graphics {
 		 class VertexArray {
 		 private:

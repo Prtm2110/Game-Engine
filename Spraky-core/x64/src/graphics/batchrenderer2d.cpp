@@ -1,6 +1,6 @@
 #include "BatchRenderer2D.h"
 
-namespace sparky {
+namespace rabbit {
 	namespace graphics {
 
 		BatchRenderer2D::BatchRenderer2D()

@@ -1,6 +1,6 @@
 #pragma once
 #include "renderable2d.h"
-namespace sparky {
+namespace rabbit {
 	namespace graphics {
 		class StaticSprite : public Renderable2D
 		{

@@ -3,7 +3,7 @@
 #include "renderer2d.h"
 #include "buffers/indexbuffer.h"
 
-namespace sparky {
+namespace rabbit {
 	namespace graphics {
 
 #define RENDERER_MAX_SPRITES	60000

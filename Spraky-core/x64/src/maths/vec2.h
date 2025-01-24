@@ -2,7 +2,7 @@
 #include <iostream>
 
 
-namespace sparky {
+namespace rabbit {
 	namespace maths {
 		struct vec2 {
 			float x, y;

@@ -4,7 +4,7 @@
 #include <GL/glew.h>
 #include "../utils/fileutils.h"
 #include "../maths/maths.h"
-namespace sparky {
+namespace rabbit {
 	namespace graphics {
 		
 		class Shader {

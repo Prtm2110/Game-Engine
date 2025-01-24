@@ -2,7 +2,7 @@
 using namespace std;
 
 
-namespace sparky {
+namespace rabbit {
 	namespace maths {
 		vec2::vec2() {
 			x = 0.0f;

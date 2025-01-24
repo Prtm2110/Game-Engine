@@ -3,7 +3,7 @@
 #include "vec4.h"
 #include "vec3.h"
 
-namespace sparky{
+namespace rabbit{
 	namespace maths{
 		struct vec4; // Forward declaration
 

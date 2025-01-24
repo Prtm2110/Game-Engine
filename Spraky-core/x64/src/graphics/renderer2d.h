@@ -5,7 +5,7 @@
 
 #include "../maths/maths.h"
 
-namespace sparky {
+namespace rabbit {
 	namespace graphics {
 		class Renderer2D
 		{

@@ -3,7 +3,7 @@
 #include <sstream>
 #include <stdexcept>
 
-namespace sparky {
+namespace rabbit {
     namespace utils {
         std::string read_file(const std::string& filepath) {
             std::ifstream file(filepath);

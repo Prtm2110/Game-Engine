@@ -1,11 +1,11 @@
 #include "shader.h"
 #include <iostream>
 
-using namespace sparky;
+using namespace rabbit;
 using namespace graphics;
 using namespace utils;
 
-namespace sparky {
+namespace rabbit {
 	namespace graphics {
 
 		Shader::Shader(const char* vertPath, const char* fragPath)

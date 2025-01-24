@@ -7,7 +7,7 @@
 #include "../maths/maths.h"
 #include "shader.h"
 
-namespace sparky {
+namespace rabbit {
 	namespace graphics {
 
 		struct VertexData

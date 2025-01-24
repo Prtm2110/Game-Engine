@@ -4,7 +4,7 @@
 #include "renderer2d.h"
 #include "static_sprite.h"
 
-namespace sparky {
+namespace rabbit {
 	namespace graphics {
 
 		class Simple2DRenderer : public Renderer2D

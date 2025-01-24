@@ -4,10 +4,10 @@
 #include "maths_func.h"
 
 using namespace std;
-using namespace sparky;
+using namespace rabbit;
 using namespace maths;
 
-namespace sparky{
+namespace rabbit{
 	namespace maths {
 
 	

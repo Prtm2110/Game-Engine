@@ -1,6 +1,6 @@
 #include "simple2drenderer.h"
 
-namespace sparky {
+namespace rabbit {
 	namespace graphics {
 
 		void Simple2DRenderer::submit(const Renderable2D* renderable)

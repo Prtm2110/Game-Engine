@@ -1,9 +1,9 @@
 #include "buffer.h"
 
-using namespace sparky;
+using namespace rabbit;
 using namespace graphics;
 
-namespace sparky {
+namespace rabbit {
 	namespace graphics {
 
 		Buffer::Buffer(GLfloat* data, GLsizei count, GLuint componenetCount)
