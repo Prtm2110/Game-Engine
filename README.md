@@ -1,60 +1,59 @@
-# Rabbit Renderer
+# 🐰 Rabbit3D
 
-Rabbit Renderer is a lightweight 3D graphics rendering engine inspired by The Cherno's Rabbit Game Engine series. Built using OpenGL, GLEW, and GLFW, this project serves as a learning tool and a functional 3D renderer with modular components for graphics rendering, mathematics, and window management.
+A lightweight, modern 3D graphics rendering engine built with OpenGL. This project serves as both a learning tool and a functional 3D renderer.
 
-## Features
+![Rendering Example](docs/3DRABBIT.gif)
 
-- **3D Rendering**: Render high-quality 3D graphics with OpenGL.
-- **Math Module**: Provides utilities for matrix, vector, and transformation calculations.
-- **Windows Module**: Handles window creation, input events, and context management via GLFW.
-- **Case Handling**: Robust error and input handling mechanisms for smooth operation.
+## ✨ Key Features
 
-## Getting Started
+- **Modern OpenGL Rendering Pipeline**
+  - Hardware-accelerated 3D graphics rendering
+  - Shader-based rendering system
+  - Vertex and Index buffer abstractions
+  
+- **Mathematics Library**
+  - Vector operations (Vec2, Vec3, Vec4)
+  - Matrix transformations (4x4 matrices)
+  - Quaternion support
+  - Camera and projection utilities
 
-Follow these steps to set up and run the Rabbit Renderer on your system.
+- **Window Management**
+  - GLFW-based window creation and management
+  - Event handling system
+  - Input management (keyboard, mouse)
+  - Multiple window support
+
+- **Graphics Features**
+  - Mesh rendering
+  - Texture loading and management
+  - Basic material system
+  - Simple lighting model
+
+## 🚀 Getting Started
 
 ### Prerequisites
 
-Ensure you have the following installed:
-
-- **C++ Compiler**: GCC/Clang/MSVC
-- **GLEW**: OpenGL Extension Wrangler Library
-- **GLFW**: OpenGL Framework for window management
-
-### Cloning the Repository
-
-```bash
-git clone <repository-url>
-cd Rabbit-renderer
-```
+- **C++ Development Environment**
+  - Visual Studio 2019/2022 (Windows)
+  - GCC 7+ (Linux)
+  - Clang 8+ (macOS)
+- **Dependencies** (included in repository)
+  - GLEW 2.1.0
+  - GLFW 3.3+
+  - OpenGL 4.3+
 
 ### Building the Project
 
-1. Create a build directory:
+#### Windows (Visual Studio)
+1. Open `Spraky.sln` in Visual Studio
+2. Select build configuration (Debug/Release)
+3. Build solution (F7)
 
-   ```bash
-   mkdir build && cd build
-   ```
-
-2. Configure the build system with CMake:
-
-   ```bash
-   cmake ..
-   ```
-
-3. Build the project:
-
-   ```bash
-   make
-   ```
-
-### Running the Renderer
-
-After building the project, you can run the renderer executable:
-
+#### Linux/macOS
 ```bash
-./Rabbit_renderer
-```
+mkdir build && cd build
+cmake ..
+make -j$(nproc)
 
 ## Usage
 
