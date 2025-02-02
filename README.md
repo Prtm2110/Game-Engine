@@ -54,6 +54,7 @@ A lightweight, modern 3D graphics rendering engine built with OpenGL. This proje
 mkdir build && cd build
 cmake ..
 make -j$(nproc)
+```
 
 ## Usage
 
@@ -69,10 +70,13 @@ make -j$(nproc)
 
 Here is a basic example to render a triangle:
 
+
 ```cpp
-#include "Window.h"
-#include "Math.h"
-#include "Renderer.h"
+#include "x64/src/graphics/window.h"
+#include "x64/src/graphics/shader.h"
+#include "x64/src/graphics/renderer2d.h"
+#include "x64/src/maths/maths.h"
+//Keep relative imports in mind
 
 int main() {
     Window window(800, 600, "Rabbit Renderer");
